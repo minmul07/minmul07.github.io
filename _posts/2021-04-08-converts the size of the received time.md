@@ -7,7 +7,7 @@ title:  "입력받은 시간(초 단위)의 크기를 변환"
 def sectotime(s2t):
     if (int(s2t >= 86400) != 0):
         print(f"{int(s2t/86400)}일", end = " ")
-    if (int(s2t/3600) != 0):
+    if (int(s2t%86400/3600) != 0):
         print(f"{int(s2t%86400/3600)}시간", end = " ")
     if (int(s2t%3600/60) != 0):
         print(f"{int(s2t%3600/60)}분", end = " ")
