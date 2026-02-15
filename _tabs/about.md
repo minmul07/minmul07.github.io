@@ -10,7 +10,7 @@ order: 4
 
 ## contact me
 - Email: sksmstmdrud@gmail.com
-- Github: https://github.com/minmul07
+- Github: [@minmul07](https://github.com/minmul07)
 - Instagram: [@minmulsk](https://www.instagram.com/minmulsk/)
 - Telegram: [@minmul07](https://t.me/minmul07)
 - Discord: [@minmul](https://discord.com/users/minmul)
