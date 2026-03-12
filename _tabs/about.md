@@ -15,9 +15,6 @@ order: 4
 - Email: sksmstmdrud@gmail.com
 - Github: [@minmul07](https://github.com/minmul07)
 - Instagram: [@minmulsk](https://www.instagram.com/minmulsk/)
-- Telegram: [@minmul07](https://t.me/minmul07)
-- Discord: [@minmul](https://discord.com/users/minmul)
-
 
 
 
