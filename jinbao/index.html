@@ -1,0 +1,26 @@
+---
+layout: secret-standalone
+title: "진바오야 어디갔니 ㅠㅠ"
+permalink: /jinbao/
+sitemap: false
+robots: "noindex, nofollow, noarchive"
+description: "정진우의 복무 진행도를 계산하는 숨겨진 페이지"
+hide_stamp: true
+hide_hero: true
+hide_footer_note: true
+page_shel`l_class: secret-dashboard-shell
+content_class: secret-dashboard-content
+stylesheets:
+  - /assets/css/jinbao.css
+module_scripts:
+  - /assets/js/jinbao/main.js
+mission_briefing:
+  soldier_name: "정진우"
+  entry_date: "2026-03-31"
+  discharge_date: "2027-09-30"
+---
+{% include jinbao/app.html
+  soldier_name=page.mission_briefing.soldier_name
+  entry_date=page.mission_briefing.entry_date
+  discharge_date=page.mission_briefing.discharge_date
+%}

@@ -1,0 +1,158 @@
+.panel {
+  padding: 22px 20px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #51484c 0%, #453c40 100%);
+  color: #fffaf2;
+}
+
+.panel-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.panel-title-row > * {
+  min-width: 0;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: clamp(1.3rem, 3.8vw, 2rem);
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.panel-date {
+  color: rgba(255, 250, 242, 0.84);
+  font-size: 1rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.bar {
+  overflow: hidden;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.14);
+}
+
+.bar > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #a4ebd2 0%, #d8f5e6 100%);
+  transition: width 300ms ease;
+}
+
+.bar--light > span {
+  background: linear-gradient(90deg, #f8f2d0 0%, #fffced 100%);
+}
+
+.progress-copy {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.progress-main {
+  font-size: clamp(1.75rem, 4.3vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+.progress-helper {
+  color: rgba(255, 250, 242, 0.8);
+  font-size: 0.96rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.progress-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 12px;
+  color: rgba(255, 250, 242, 0.88);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.progress-meta > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mini-card__header {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.mini-card__eyebrow {
+  color: rgba(255, 250, 242, 0.7);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mini-card__target {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  font-weight: 900;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
+}
+
+.mini-card__date {
+  color: rgba(255, 250, 242, 0.82);
+  font-size: 1rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 560px) {
+  .panel {
+    padding: 18px 16px;
+    border-radius: 22px;
+  }
+
+  .panel-title-row {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .panel-date {
+    font-size: 1rem;
+  }
+
+  .progress-main {
+    font-size: clamp(1.35rem, 7vw, 1.9rem);
+    line-height: 1.08;
+  }
+
+  .progress-helper,
+  .progress-meta,
+  .mini-card__date,
+  .mini-card__eyebrow {
+    font-size: 0.98rem;
+  }
+
+  .progress-meta {
+    display: grid;
+    gap: 6px;
+  }
+
+  .mini-card__target {
+    font-size: clamp(1.18rem, 6vw, 1.55rem);
+  }
+}

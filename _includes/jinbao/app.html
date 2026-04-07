@@ -1,0 +1,23 @@
+{% assign soldier_name = include.soldier_name | default: page.mission_briefing.soldier_name %}
+{% assign entry_date = include.entry_date | default: page.mission_briefing.entry_date %}
+{% assign discharge_date = include.discharge_date | default: page.mission_briefing.discharge_date %}
+
+<section
+  class="mission-app"
+  data-entry-date="{{ entry_date }}"
+  data-discharge-date="{{ discharge_date }}"
+  data-soldier-name="{{ soldier_name }}"
+>
+  {% include jinbao/banner.html soldier_name=soldier_name %}
+  {% include jinbao/profile-card.html soldier_name=soldier_name entry_date=entry_date discharge_date=discharge_date %}
+  {% include jinbao/status-strip.html %}
+  {% include jinbao/discharge-panel.html discharge_date=discharge_date %}
+
+  <section class="split-grid">
+    {% include jinbao/next-hobo-card.html %}
+    {% include jinbao/next-rank-card.html %}
+  </section>
+
+  {% include jinbao/stat-list.html %}
+
+</section>

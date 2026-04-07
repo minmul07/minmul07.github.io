@@ -1,0 +1,21 @@
+<section class="profile-card">
+  <div class="avatar" aria-hidden="true"></div>
+
+  <div>
+    <div class="profile-rank" id="profile-rank">계산 중</div>
+    <h1 class="profile-name" id="profile-name">{{ include.soldier_name }}</h1>
+
+    <dl class="profile-meta">
+      <div class="profile-meta__row">
+        <dt>입대</dt>
+        <dd id="entry-date-text">{{ include.entry_date | date: "%Y.%m.%d" }}</dd>
+      </div>
+      <div class="profile-meta__row">
+        <dt>전역</dt>
+        <dd id="discharge-date-text">{{ include.discharge_date | date: "%Y.%m.%d" }}</dd>
+      </div>
+    </dl>
+
+    <p class="remain-text" id="remain-text">복무 정보를 계산 중입니다...</p>
+  </div>
+</section>

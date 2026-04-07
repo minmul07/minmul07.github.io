@@ -1,0 +1,18 @@
+<section class="panel">
+  <div class="panel-title-row">
+    <h2 class="panel-title">전역</h2>
+    <div class="panel-date" id="panel-discharge-date">{{ include.discharge_date | date: "%Y년 %m월 %d일" }}</div>
+  </div>
+
+  <div class="bar"><span id="bar-discharge"></span></div>
+
+  <div class="progress-copy">
+    <div class="progress-main" id="progress-discharge">0.00000000%</div>
+    <div class="progress-helper" id="progress-discharge-helper">전역 진행률</div>
+  </div>
+
+  <div class="progress-meta">
+    <span id="progress-discharge-remaining">남은 비율 100.00000000%</span>
+    <span id="progress-discharge-dday">계산 중</span>
+  </div>
+</section>
