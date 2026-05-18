@@ -161,11 +161,11 @@ export function renderMissionBriefing(elements, config, snapshot) {
 
   const hotAndCookRemaining = snapshot.isDischarged
     ? '0.000000개'
-    : `${buildRemainingUnits(snapshot.now, snapshot.nextRankDate, 10)}개`;
+    : `${buildRemainingUnits(snapshot.now, config.dischargeDateTime, 10)}개`;
 
   const rationIIIRemaining = snapshot.isDischarged
     ? '0.000000개'
-    : `${buildRemainingUnits(snapshot.now, snapshot.nextRankDate, 15)}개`;
+    : `${buildRemainingUnits(snapshot.now, config.dischargeDateTime, 15)}개`;
 
   elements.statNextRankHotAndCook.textContent = hotAndCookRemaining;
   elements.statNextRankRationIII.textContent = rationIIIRemaining;
