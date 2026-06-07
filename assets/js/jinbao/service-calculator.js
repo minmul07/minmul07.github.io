@@ -59,6 +59,7 @@ function buildRankStages(entryDate, dischargeDateTime, milestones) {
 export function createMissionBriefingConfig(dataset) {
   const soldierName = readRequiredDatasetValue(dataset, 'soldierName');
   const entryDate = parseDateOnly(readRequiredDatasetValue(dataset, 'entryDate'));
+  const transferDate = parseDateOnly(readRequiredDatasetValue(dataset, 'transferDate'));
   const dischargeDate = parseDateOnly(readRequiredDatasetValue(dataset, 'dischargeDate'));
   const dischargeDateTime = buildDischargeDateTime(dischargeDate);
   const milestones = getRankMilestones(entryDate);
@@ -70,6 +71,7 @@ export function createMissionBriefingConfig(dataset) {
   return {
     soldierName,
     entryDate,
+    transferDate,
     dischargeDateTime,
     totalServiceDays,
     enlistMonthStart,
@@ -88,6 +90,9 @@ export function calculateMissionSnapshot(config, now = getKstNow()) {
       ? config.totalServiceDays
       : wholeDaysBetween(config.entryDate, today) + 1;
   const remainingServiceDays = Math.max(0, config.totalServiceDays - serviceElapsedDays);
+  const transferElapsedDays = today < config.transferDate
+    ? 0
+    : wholeDaysBetween(config.transferDate, today) + 1;
   const dischargeProgress = clamp((now - config.entryDate) / (config.dischargeDateTime - config.entryDate), 0, 1);
   const dischargeRemainingRatio = 1 - dischargeProgress;
   const dDayToDischarge = isBeforeEntry
@@ -149,6 +154,7 @@ export function calculateMissionSnapshot(config, now = getKstNow()) {
     nextRankDate,
     nextRankDday,
     serviceElapsedDays,
+    transferElapsedDays,
     remainingServiceDays,
     dischargeProgress,
     dischargeRemainingRatio,

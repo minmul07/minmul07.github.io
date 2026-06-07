@@ -36,6 +36,7 @@ const ELEMENT_IDS = {
   progressRankDday: 'progress-rank-dday',
   statTotalDays: 'stat-total-days',
   statCurrentDays: 'stat-current-days',
+  statTransferDays: 'stat-transfer-days',
   statNextRankHotAndCook: 'stat-next-rank-hot-and-cook',
   statNextRankRationIII: 'stat-next-rank-ration-iii',
   statEscapeFromTarkovTime: 'stat-escape-from-tarkov-time',
@@ -158,6 +159,7 @@ export function renderMissionBriefing(elements, config, snapshot) {
 
   elements.statTotalDays.textContent = `${config.totalServiceDays.toLocaleString('ko-KR')}일`;
   elements.statCurrentDays.textContent = `${snapshot.serviceElapsedDays.toLocaleString('ko-KR')}일`;
+  elements.statTransferDays.textContent = `${snapshot.transferElapsedDays.toLocaleString('ko-KR')}일`;
 
   const hotAndCookRemaining = snapshot.isDischarged
     ? '0.000000개'

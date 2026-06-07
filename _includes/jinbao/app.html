@@ -1,10 +1,12 @@
 {% assign soldier_name = include.soldier_name | default: page.mission_briefing.soldier_name %}
 {% assign entry_date = include.entry_date | default: page.mission_briefing.entry_date %}
+{% assign transfer_date = include.transfer_date | default: page.mission_briefing.transfer_date %}
 {% assign discharge_date = include.discharge_date | default: page.mission_briefing.discharge_date %}
 
 <section
   class="mission-app"
   data-entry-date="{{ entry_date }}"
+  data-transfer-date="{{ transfer_date }}"
   data-discharge-date="{{ discharge_date }}"
   data-soldier-name="{{ soldier_name }}"
 >

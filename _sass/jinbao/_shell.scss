@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 45 920;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/woff2/PretendardVariable.woff2") format("woff2");
+}
+
 .secret-dashboard-shell {
   width: min(780px, calc(100% - 20px));
   padding: 18px;
@@ -9,6 +17,10 @@
 .mission-app {
   display: grid;
   gap: 18px;
+}
+
+.mission-app {
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
 }
 
 @media (max-width: 560px) {

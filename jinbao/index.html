@@ -17,10 +17,12 @@ module_scripts:
 mission_briefing:
   soldier_name: "정진우"
   entry_date: "2026-03-31"
+  transfer_date: "2026-05-12"
   discharge_date: "2027-09-30"
 ---
 {% include jinbao/app.html
   soldier_name=page.mission_briefing.soldier_name
   entry_date=page.mission_briefing.entry_date
+  transfer_date=page.mission_briefing.transfer_date
   discharge_date=page.mission_briefing.discharge_date
 %}
