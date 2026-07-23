@@ -56,6 +56,16 @@ function buildRankStages(entryDate, dischargeDateTime, milestones) {
   ];
 }
 
+function getStageHoboBounds(stage) {
+  const stageStartMonth = startOfMonth(stage.start);
+  const stageEndMonth = startOfMonth(stage.end);
+
+  return {
+    stageStartMonth,
+    finalHobo: monthsBetween(stageStartMonth, stageEndMonth) + 1
+  };
+}
+
 export function createMissionBriefingConfig(dataset) {
   const soldierName = readRequiredDatasetValue(dataset, 'soldierName');
   const entryDate = parseDateOnly(readRequiredDatasetValue(dataset, 'entryDate'));
@@ -64,9 +74,6 @@ export function createMissionBriefingConfig(dataset) {
   const dischargeDateTime = buildDischargeDateTime(dischargeDate);
   const milestones = getRankMilestones(entryDate);
   const totalServiceDays = wholeDaysBetween(entryDate, dischargeDate) + 1;
-  const enlistMonthStart = startOfMonth(entryDate);
-  const dischargeMonthStart = startOfMonth(dischargeDate);
-  const finalHobo = monthsBetween(enlistMonthStart, dischargeMonthStart) + 1;
 
   return {
     soldierName,
@@ -74,8 +81,6 @@ export function createMissionBriefingConfig(dataset) {
     transferDate,
     dischargeDateTime,
     totalServiceDays,
-    enlistMonthStart,
-    finalHobo,
     rankStages: buildRankStages(entryDate, dischargeDateTime, milestones)
   };
 }
@@ -110,22 +115,25 @@ export function calculateMissionSnapshot(config, now = getKstNow()) {
     currentRank = currentStage.name;
   }
 
-  const currentMonthStart = startOfMonth(today);
+  const hoboMonthStart = isDischarged
+    ? startOfMonth(startOfDay(config.dischargeDateTime))
+    : startOfMonth(today);
+  const { stageStartMonth, finalHobo: stageFinalHobo } = getStageHoboBounds(currentStage);
   const currentHobo = isBeforeEntry
     ? 0
-    : Math.min(config.finalHobo, monthsBetween(config.enlistMonthStart, currentMonthStart) + 1);
+    : Math.min(stageFinalHobo, monthsBetween(stageStartMonth, hoboMonthStart) + 1);
   const nextHobo = isBeforeEntry ? 1 : currentHobo + 1;
   const nextHoboDate = isBeforeEntry
     ? config.entryDate
-    : currentHobo >= config.finalHobo
+    : currentHobo >= stageFinalHobo
       ? null
-      : monthStartAfter(currentMonthStart);
+      : monthStartAfter(hoboMonthStart);
   const hoboIntervalStart = isBeforeEntry
     ? config.entryDate
     : currentHobo <= 1
-      ? config.entryDate
-      : currentMonthStart;
-  const hoboIntervalEnd = nextHoboDate || config.dischargeDateTime;
+      ? currentStage.start
+      : hoboMonthStart;
+  const hoboIntervalEnd = nextHoboDate || currentStage.end;
   const hoboProgress = isBeforeEntry
     ? 0
     : clamp((now - hoboIntervalStart) / (hoboIntervalEnd - hoboIntervalStart), 0, 1);
