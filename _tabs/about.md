@@ -11,6 +11,7 @@ order: 4
 ## Projects
 - [KW Pass for Wear OS](https://github.com/kw-service/kw-pass-wearos) - Wear OS를 지원하는 광운대학교 도서관 출입증 어플리케이션
 - [Filmo](https://github.com/minmul07/filmo) - 10th NE(O)RDINARY HACKATHON 우수상, 독립영화의 모든 순간을 기록하는 서비스
+- [Recap](https://github.com/Central-MakeUs/recap-android) - CMC 19기, 스크린샷 요약 정리
 
 ## contact me
 - Email: sksmstmdrud@gmail.com
