@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex"/>
+<title>RECAP UI Screenshot QA — b9e2dcf</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1a1d23;--muted:#5c6570;--line:#d8dee6;--crit:#b42318;--maj:#b54708;--min:#175cd3;--pass:#027a48;--fail:#b42318;--blocked:#6941c6}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#111827;color:#fff;padding:20px 24px}
+header h1{margin:0 0 6px;font-size:22px}
+header .sub{opacity:.85;font-size:13px}
+.badges{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#eef2f6;color:#344054;font-size:12px;font-weight:600}
+.badge.host{background:#dbeafe;color:#1d4ed8}
+.badge.warn{background:#fef3c7;color:#92400e}
+.badge.sev-critical{background:#fee4e2;color:var(--crit)}
+.badge.sev-major{background:#ffead5;color:var(--maj)}
+.badge.sev-minor{background:#d1e9ff;color:var(--min)}
+.badge.status-pass{background:#dcfae6;color:var(--pass)}
+.badge.status-fail{background:#fee4e2;color:var(--fail)}
+.badge.status-blocked{background:#ebe9fe;color:var(--blocked)}
+.badge.cat{background:#f2f4f7}
+main{max-width:1200px;margin:0 auto;padding:20px 16px 48px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.card .n{font-size:24px;font-weight:700}
+.card .l{color:var(--muted);font-size:12px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0}
+section h2{margin:0 0 12px;font-size:18px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{border-bottom:1px solid var(--line);padding:8px;text-align:left}
+th{color:var(--muted);font-weight:600}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.filters label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.filters select{min-width:120px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.issue{border:1px solid var(--line);border-radius:10px;margin:10px 0;background:#fafbfc}
+.issue summary{cursor:pointer;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.issue .sum{flex:1 1 220px;color:var(--muted)}
+.issue .meta{color:var(--muted);font-size:12px}
+.issue-body{padding:0 12px 12px;border-top:1px solid var(--line)}
+.kv{display:grid;gap:6px;margin:8px 0 12px}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#eee}
+figcaption{padding:6px 8px;font-size:12px;color:var(--muted)}
+figure.healthy{border-color:#abefc6}
+.remaining{font-size:12px;color:var(--muted)}
+.pattern{border:1px solid var(--line);border-radius:8px;padding:12px;margin:8px 0;background:#fcfcfd}
+code{font-size:12px;background:#f2f4f7;padding:1px 4px;border-radius:4px}
+.hidden{display:none!important}
+.limitations ul{margin:0;padding-left:18px}
+.limitations li{margin:4px 0}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:8px}
+</style>
+</head>
+<body>
+<header>
+  <h1>RECAP UI Screenshot QA</h1>
+  <div class="sub">Generated 08/11/2026 14:53:22 · Branch <strong>fix/043-small-screen-spacing</strong> · Commit <code>b9e2dcf</code></div>
+  <div class="badges">
+    <span class="badge host">Host Screenshot QA</span>
+    <span class="badge warn">VM/System Insets Not Verified</span>
+    <span class="badge">Scope: HOST_SCREENSHOT_ONLY</span>
+  </div>
+</header>
+<main>
+<section>
+  <h2>Summary</h2>
+  <div class="cards">
+    <div class="card"><div class="n">6</div><div class="l">Modules audited</div></div>
+    <div class="card"><div class="n">360</div><div class="l">Screenshots inspected</div></div>
+    <div class="card"><div class="n">6</div><div class="l">Total issues</div></div>
+    <div class="card"><div class="n" style="color:var(--crit)">0</div><div class="l">Critical</div></div>
+    <div class="card"><div class="n" style="color:var(--maj)">6</div><div class="l">Major</div></div>
+    <div class="card"><div class="n" style="color:var(--min)">0</div><div class="l">Minor</div></div>
+    <div class="card"><div class="n" style="color:var(--blocked)">0</div><div class="l">Blocked modules</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Coverage</h2>
+  <table>
+    <thead><tr><th>Module</th><th>Status</th><th>PreviewTests</th><th>Expected</th><th>Inspected</th><th>Issues</th></tr></thead>
+    <tbody>
+<tr class='st-fail'><td>onboarding</td><td><span class='badge status-fail'>FAIL</span></td><td>9</td><td>81</td><td>81</td><td>3</td></tr>
+<tr class='st-fail'><td>settings</td><td><span class='badge status-fail'>FAIL</span></td><td>8</td><td>72</td><td>72</td><td>1</td></tr>
+<tr class='st-pass'><td>screenshot</td><td><span class='badge status-pass'>PASS</span></td><td>5</td><td>45</td><td>45</td><td>0</td></tr>
+<tr class='st-fail'><td>organize</td><td><span class='badge status-fail'>FAIL</span></td><td>7</td><td>63</td><td>63</td><td>1</td></tr>
+<tr class='st-pass'><td>home</td><td><span class='badge status-pass'>PASS</span></td><td>6</td><td>54</td><td>54</td><td>0</td></tr>
+<tr class='st-fail'><td>collection</td><td><span class='badge status-fail'>FAIL</span></td><td>5</td><td>45</td><td>45</td><td>1</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Issues <span id="issueVisibleCount">(6)</span></h2>
+  <div class="filters">
+    <label>Module<select id="fModule"><option value=''>All modules</option><option value='onboarding'>onboarding</option><option value='settings'>settings</option><option value='screenshot'>screenshot</option><option value='organize'>organize</option><option value='home'>home</option><option value='collection'>collection</option></select></label>
+    <label>Severity<select id="fSeverity"><option value=''>All severities</option><option value='CRITICAL'>CRITICAL</option><option value='MAJOR'>MAJOR</option><option value='MINOR'>MINOR</option></select></label>
+    <label>Category<select id="fCategory"><option value=''>All categories</option><option value='CLIPPING'>CLIPPING</option><option value='HORIZONTAL_OVERFLOW'>HORIZONTAL_OVERFLOW</option><option value='OVERLAP'>OVERLAP</option></select></label>
+    <label>Width (dp)<select id="fWidth"><option value=''>All widths</option><option value='320'>320</option><option value='360'>360</option><option value='412'>412</option></select></label>
+    <label>Font scale<select id="fFont"><option value=''>All font scales</option><option value='1'>1</option><option value='1.3'>1.3</option><option value='1.5'>1.5</option></select></label>
+  </div>
+  <div id="issueList">
+<article class='issue' data-module='collection' data-severity='MAJOR' data-category='CLIPPING' data-widths='320' data-fonts='1.3,1.5'>
+<details open>
+<summary>
+<span class='badge sev-major'>MAJOR</span>
+<span class='badge cat'>CLIPPING</span>
+<strong>collection-001</strong>
+<span class='meta'>collection / CollectionScreen</span>
+<span class='sum'>Category grid labels ellipsize under compact width / high fontScale</span>
+</summary>
+<div class='issue-body'>
+<p>In Overview Grid mode, fixed 3-column category cells force single-line category titles such as '쇼핑 · 상품' and '장소 · 맛집' into ellipsis (e.g. '쇼핑 · ...', '장소 · ...'), so primary category identity becomes unreadable while the folder icons remain.</p>
+<div class='kv'><div><b>State</b> Overview Grid (populated categories)</div>
+<div><b>Test</b> <code>com.chalkak.recap.feature.collection.CollectionScreenOverviewGridScreenshot</code></div>
+<div><b>Components</b> CollectionTypeGridItem, LazyVerticalGrid GridCells.Fixed(3), RecapHeading3 category label, collection_recap_count plural</div>
+<div><b>Root cause file</b> <code>feature/collection/src/main/java/com/chalkak/recap/feature/collection/CollectionScreen.kt</code></div>
+<div><b>Probable root cause</b> Fixed 3-column grid cell width plus single-line ellipsis on scaled RecapHeading3/Caption2 text cannot fit multi-token category labels without allowing wrap, adaptive columns, or a denser typography/layout contract.</div>
+<div><b>Fix layer</b> SCREEN · <b>Confidence</b> HIGH · <b>VM confirmation</b> False</div>
+</div>
+<h4>Evidence</h4><ul>
+<li>320x640 @ font130/150: category titles truncated to '쇼핑 · ...' and '장소 · ...' while '기타' remains fully visible.</li>
+<li>320x640 @ font100 and 360/412 at font100-150 keep full '쇼핑 · 상품' / '장소 · 맛집' / count strings.</li>
+<li>Source: CollectionTypeGridItem uses maxLines=1 + TextOverflow.Ellipsis for label and count under LazyVerticalGrid(columns = GridCells.Fixed(3)) with HorizontalPadding 20.dp and TypeGridSpacing 19.dp (~80.7dp cell width at 320dp).</li>
+</ul>
+<h4>Failing screenshots</h4><div class='shots'>
+<figure><img src='assets/collection/collection-001__320x640-font150.png' alt='collection-001 320x640-font150' loading='lazy'/><figcaption>Most severe failing · 320x640-font150 · 320x640 · fontScale 1.5</figcaption></figure><figure><img src='assets/collection/collection-001__320x640-font130.png' alt='collection-001 320x640-font130' loading='lazy'/><figcaption>Boundary (issue begins) · 320x640-font130 · 320x640 · fontScale 1.3</figcaption></figure><figure class='healthy'><img src='assets/collection/collection-001__healthy.png' alt='collection-001 healthy' loading='lazy'/><figcaption>Healthy comparison</figcaption></figure>
+</div>
+<p class='remaining'><b>All occurrence previews:</b> 320x640-font130, 320x640-font150</p>
+</div></details></article>
+
+<article class='issue' data-module='onboarding' data-severity='MAJOR' data-category='HORIZONTAL_OVERFLOW' data-widths='320' data-fonts='1.5'>
+<details open>
+<summary>
+<span class='badge sev-major'>MAJOR</span>
+<span class='badge cat'>HORIZONTAL_OVERFLOW</span>
+<strong>onboarding-003</strong>
+<span class='meta'>onboarding / OnboardingAddToFavoriteGuideScreen</span>
+<span class='sum'>Step3 RECAP check callout clipped off left edge</span>
+</summary>
+<div class='issue-body'>
+<p>On step 3, GuideTouchHighlight places the RECAP 체크하기 speech bubble centered on a left-side hotspot (xFraction 0.146). On narrower widths / larger fonts the bubble extends past the left viewport edge and also overlaps the left pager chevron.</p>
+<div class='kv'><div><b>State</b> step3</div>
+<div><b>Test</b> <code>com.chalkak.recap.feature.onboarding.screen.OnboardingAddToFavoriteGuideScreenStep3Screenshot</code></div>
+<div><b>Components</b> GuideTouchHighlight, RecapSpeechBubble, GuideChevronButton</div>
+<div><b>Root cause file</b> <code>feature/onboarding/src/main/java/com/chalkak/recap/feature/onboarding/screen/OnboardingAddToFavoriteGuideScreen.kt</code></div>
+<div><b>Probable root cause</b> Absolute bubble offset from a left-side hotspot is not clamped to the available page width, so enlarged bubbles overflow horizontally.</div>
+<div><b>Fix layer</b> SCREEN · <b>Confidence</b> HIGH · <b>VM confirmation</b> False</div>
+</div>
+<h4>Evidence</h4><ul>
+<li>Left edge of RECAP 체크하기 bubble is cut off on 320x640/font150.</li>
+<li>GuideTouchHighlight computes x = holeCenterX - bubbleWidth/2 without clamping to parent bounds; step3 hotspot is near the left (xFraction=0.146).</li>
+</ul>
+<h4>Failing screenshots</h4><div class='shots'>
+<figure><img src='assets/onboarding/onboarding-003__320x640-font150.png' alt='onboarding-003 320x640-font150' loading='lazy'/><figcaption>Most severe failing · 320x640-font150 · 320x640 · fontScale 1.5</figcaption></figure><figure class='healthy'><img src='assets/onboarding/onboarding-003__healthy.png' alt='onboarding-003 healthy' loading='lazy'/><figcaption>Healthy comparison</figcaption></figure>
+</div>
+<p class='remaining'><b>All occurrence previews:</b> 320x640-font150</p>
+</div></details></article>
+
+<article class='issue' data-module='onboarding' data-severity='MAJOR' data-category='OVERLAP' data-widths='320,412' data-fonts='1.3,1.5'>
+<details open>
+<summary>
+<span class='badge sev-major'>MAJOR</span>
+<span class='badge cat'>OVERLAP</span>
+<strong>onboarding-001</strong>
+<span class='meta'>onboarding / OnboardingLandingScreen</span>
+<span class='sum'>Start chip speech bubble overlaps simple-login divider</span>
+</summary>
+<div class='issue-body'>
+<p>The absolute-offset RecapSpeechBubble (5초만에 시작하기) collides with the 간편로그인 divider/label above the Kakao button as fontScale grows.</p>
+<div class='kv'><div><b>State</b> default</div>
+<div><b>Test</b> <code>com.chalkak.recap.feature.onboarding.screen.OnboardingLandingScreenScreenshot</code></div>
+<div><b>Components</b> RecapSpeechBubble, SocialLoginSection, 간편로그인 divider</div>
+<div><b>Root cause file</b> <code>feature/onboarding/src/main/java/com/chalkak/recap/feature/onboarding/screen/OnboardingLandingScreen.kt</code></div>
+<div><b>Probable root cause</b> Fixed absolute bubble offset (LandingBubbleKakaoGap) does not adapt when bubble height and nearby caption typography grow with fontScale.</div>
+<div><b>Fix layer</b> SCREEN · <b>Confidence</b> HIGH · <b>VM confirmation</b> False</div>
+</div>
+<h4>Evidence</h4><ul>
+<li>At 320x640/font130 and 412x915/font150 the speech bubble visually covers 간편로그인 and the divider line.</li>
+<li>OnboardingLandingScreen.kt positions RecapSpeechBubble with a fixed LandingBubbleKakaoGap (90.dp) absolute offset from the Kakao button, so larger bubble/text height collapses into the SocialLoginSection header.</li>
+</ul>
+<h4>Failing screenshots</h4><div class='shots'>
+<figure><img src='assets/onboarding/onboarding-001__320x640-font130.png' alt='onboarding-001 320x640-font130' loading='lazy'/><figcaption>Most severe failing · 320x640-font130 · 320x640 · fontScale 1.3</figcaption></figure><figure class='healthy'><img src='assets/onboarding/onboarding-001__healthy.png' alt='onboarding-001 healthy' loading='lazy'/><figcaption>Healthy comparison</figcaption></figure>
+</div>
+<p class='remaining'><b>Additional failing configs:</b> 412x915-font150 (412x915 fontScale 1.5)</p>
+<p class='remaining'><b>All occurrence previews:</b> 320x640-font130, 412x915-font150</p>
+</div></details></article>
+
+<article class='issue' data-module='onboarding' data-severity='MAJOR' data-category='CLIPPING' data-widths='320,360,412' data-fonts='1,1.3,1.5'>
+<details open>
+<summary>
+<span class='badge sev-major'>MAJOR</span>
+<span class='badge cat'>CLIPPING</span>
+<strong>onboarding-002</strong>
+<span class='meta'>onboarding / OnboardingUploadMethodGuideScreen</span>
+<span class='sum'>Fixed-height upload method cards clip description text</span>
+</summary>
+<div class='issue-body'>
+<p>Album-select and share-send guide cards use fixed heights. As fontScale increases, title/description text is clipped at the card edge (horizontal and/or vertical), making feature copy unreadable. Even some fontScale 1.0 compact widths clip description lines.</p>
+<div class='kv'><div><b>State</b> default</div>
+<div><b>Test</b> <code>com.chalkak.recap.feature.onboarding.screen.OnboardingUploadMethodGuideScreenScreenshot</code></div>
+<div><b>Components</b> AlbumSelectGuideCard, ShareSendGuideCard, UploadMethodGuideCardText</div>
+<div><b>Root cause file</b> <code>feature/onboarding/src/main/java/com/chalkak/recap/feature/onboarding/screen/OnboardingUploadMethodGuideScreen.kt</code></div>
+<div><b>Probable root cause</b> Fixed-height cards cannot grow with scaled typography; clipped Column text overflows the card bounds.</div>
+<div><b>Fix layer</b> SCREEN · <b>Confidence</b> HIGH · <b>VM confirmation</b> False</div>
+</div>
+<h4>Evidence</h4><ul>
+<li>Card description lines are cut mid-glyph by the card clip boundary on compact and high fontScale renders.</li>
+<li>OnboardingUploadMethodGuideScreen.kt uses UploadMethodGuideCardHeight = 129.dp and AlbumSelectGuideImageSize = 119.dp fixed heights with clip(RoundedCornerShape).</li>
+</ul>
+<h4>Failing screenshots</h4><div class='shots'>
+<figure><img src='assets/onboarding/onboarding-002__360x800-font130.png' alt='onboarding-002 360x800-font130' loading='lazy'/><figcaption>Most severe failing · 360x800-font130 · 360x800 · fontScale 1.3</figcaption></figure><figure class='healthy'><img src='assets/onboarding/onboarding-002__healthy.png' alt='onboarding-002 healthy' loading='lazy'/><figcaption>Healthy comparison</figcaption></figure>
+</div>
+<p class='remaining'><b>Additional failing configs:</b> 320x640-font100 (320x640 fontScale 1); 320x640-font130 (320x640 fontScale 1.3); 320x640-font150 (320x640 fontScale 1.5); 360x800-font150 (360x800 fontScale 1.5); 412x915-font130 (412x915 fontScale 1.3)</p>
+<p class='remaining'><b>All occurrence previews:</b> 320x640-font100, 320x640-font130, 320x640-font150, 360x800-font130, 360x800-font150, 412x915-font130</p>
+</div></details></article>
+
+<article class='issue' data-module='organize' data-severity='MAJOR' data-category='OVERLAP' data-widths='320' data-fonts='1.5'>
+<details open>
+<summary>
+<span class='badge sev-major'>MAJOR</span>
+<span class='badge cat'>OVERLAP</span>
+<strong>organize-001</strong>
+<span class='meta'>organize / OrganizeAnalysisStatusRoute / OrganizeProgressContent</span>
+<span class='sum'>Progress speech bubble overlaps pinned cancel CTA on compact short screens</span>
+</summary>
+<div class='issue-body'>
+<p>On 320x640 at fontScale 1.5, the RecapSpeechBubble under the progress bar overlaps the pinned bottom cancel button (정리 취소). Bubble border and lower bubble text are obscured by the CTA. Healthy at the same size with fontScale 1.0/1.3 and on taller sizes (360/412).</p>
+<div class='kv'><div><b>State</b> Progress (notificationsEnabled=true, progress=0.65)</div>
+<div><b>Test</b> <code>com.chalkak.recap.feature.organize.OrganizeAnalysisStatusProgressScreenshot</code></div>
+<div><b>Components</b> OrganizeProgressContent, RecapSpeechBubble, OrganizeAnalysisStatusScaffold RecapButton (cancel)</div>
+<div><b>Root cause file</b> <code>feature/organize/src/main/java/com/chalkak/recap/feature/organize/OrganizeAnalysisStatusRoute.kt</code></div>
+<div><b>Probable root cause</b> Pinned bottom CTA plus non-scroll centered Progress Column with fixed 240.dp illustration and fixed spacers; no scroll or content bottom padding to keep the speech bubble clear of the button on short viewports under large fontScale.</div>
+<div><b>Fix layer</b> SCREEN · <b>Confidence</b> HIGH · <b>VM confirmation</b> False</div>
+</div>
+<h4>Evidence</h4><ul>
+<li>320x640-font150 screenshot shows the speech bubble bottom edge and lower text colliding with the lavender cancel button.</li>
+<li>OrganizeAnalysisStatusRoute pins RecapButton at Alignment.BottomCenter with no reserved content bottom inset for Progress.</li>
+<li>OrganizeProgressContent is a non-scroll Column with fixed IllustrationSize 240.dp and fixed vertical spacers, centered via Alignment.Center with ProgressContentOffsetY (-20.dp).</li>
+<li>At higher fontScale, wrapped title/description/bubble text increases content height until the bubble intersects the pinned CTA.</li>
+</ul>
+<h4>Failing screenshots</h4><div class='shots'>
+<figure><img src='assets/organize/organize-001__320x640-font150.png' alt='organize-001 320x640-font150' loading='lazy'/><figcaption>Most severe failing · 320x640-font150 · 320x640 · fontScale 1.5</figcaption></figure><figure class='healthy'><img src='assets/organize/organize-001__healthy.png' alt='organize-001 healthy' loading='lazy'/><figcaption>Healthy comparison</figcaption></figure>
+</div>
+<p class='remaining'><b>All occurrence previews:</b> 320x640-font150</p>
+</div></details></article>
+
+<article class='issue' data-module='settings' data-severity='MAJOR' data-category='CLIPPING' data-widths='320,360,412' data-fonts='1.3,1.5'>
+<details open>
+<summary>
+<span class='badge sev-major'>MAJOR</span>
+<span class='badge cat'>CLIPPING</span>
+<strong>settings-001</strong>
+<span class='meta'>settings / UsageGuideScreen</span>
+<span class='sum'>ShareFavoriteGuideCard description clipped by fixed card height</span>
+</summary>
+<div class='issue-body'>
+<p>On UsageGuideScreen, the ShareFavoriteGuideCard description text is vertically clipped inside the fixed-height card as fontScale increases. At fontScale 1.3 the trailing portion of the description is already missing; at 1.5 the last line is cut mid-glyph. Healthy baseline (412x915 font100) shows the full description '공유 시트에서 Recap으로 바로 공유할 수 있어요'.</p>
+<div class='kv'><div><b>State</b> default</div>
+<div><b>Test</b> <code>com.chalkak.recap.feature.settings.guide.UsageGuideScreenScreenshot</code></div>
+<div><b>Components</b> ShareFavoriteGuideCard, UsageGuideScreen</div>
+<div><b>Root cause file</b> <code>core/design/src/main/java/com/chalkak/recap/core/design/component/card/ShareFavoriteGuideCard.kt</code></div>
+<div><b>Probable root cause</b> ShareFavoriteGuideCard hard-codes CardHeight = 115.dp around title + description + illustration reservation; scaled typography exceeds that height and is clipped by the Box.</div>
+<div><b>Fix layer</b> COMPONENT · <b>Confidence</b> HIGH · <b>VM confirmation</b> False</div>
+</div>
+<h4>Evidence</h4><ul>
+<li>320x640-font150: description line inside ShareFavoriteGuideCard is cut mid-glyph at the card bottom edge</li>
+<li>412x915-font150: second description line is horizontally sliced through character midpoints</li>
+<li>ShareFavoriteGuideCard.kt uses Modifier.height(ShareFavoriteGuideCardTokens.CardHeight) with CardHeight = 115.dp and no verticalScroll or heightIn(min=...)</li>
+<li>UsageGuideScreen body uses verticalScroll, so list content below the fold is reachable; the card clipping is internal to the fixed-height component</li>
+</ul>
+<h4>Failing screenshots</h4><div class='shots'>
+<figure><img src='assets/settings/settings-001__320x640-font150.png' alt='settings-001 320x640-font150' loading='lazy'/><figcaption>Most severe failing · 320x640-font150 · 320x640 · fontScale 1.5</figcaption></figure><figure><img src='assets/settings/settings-001__320x640-font130.png' alt='settings-001 320x640-font130' loading='lazy'/><figcaption>Boundary (issue begins) · 320x640-font130 · 320x640 · fontScale 1.3</figcaption></figure><figure class='healthy'><img src='assets/settings/settings-001__healthy.png' alt='settings-001 healthy' loading='lazy'/><figcaption>Healthy comparison</figcaption></figure>
+</div>
+<p class='remaining'><b>Additional failing configs:</b> 360x800-font130 (360x800 fontScale 1.3); 360x800-font150 (360x800 fontScale 1.5); 412x915-font150 (412x915 fontScale 1.5)</p><p class='remaining'><b>All occurrence previews:</b> 320x640-font130, 320x640-font150, 360x800-font130, 360x800-font150, 412x915-font150</p>
+</div></details></article>
+
+  </div>
+</section>
+
+<section>
+  <h2>Cross-module patterns</h2>
+<article class='pattern'>
+<h3>xpat-001: Fixed-height containers clip scaled typography <span class='badge'>HIGH</span></h3>
+<p>Multiple screens use hard-coded container heights that do not grow with fontScale, so title/description text is clipped inside the component even when the parent list may scroll.</p>
+<div class='kv'>
+<div><b>Issues</b> onboarding-002, settings-001</div>
+<div><b>Modules</b> onboarding, settings</div>
+<div><b>Common failing configs</b> fontScale >= 1.3 on compact widths</div>
+<div><b>Probable shared layer</b> COMPONENT/SCREEN fixed-height tokens (guide cards)</div>
+<div><b>Evidence</b> onboarding-002 UploadMethodGuideCardHeight 129.dp; settings-001 ShareFavoriteGuideCard CardHeight 115.dp — both clip under elevated fontScale in host screenshots.</div>
+</div></article>
+
+<article class='pattern'>
+<h3>xpat-002: RecapSpeechBubble absolute placement collides or overflows under scale <span class='badge'>HIGH</span></h3>
+<p>Screens that position RecapSpeechBubble with absolute offsets or hotspot-centered placement without clamping/adapting for larger bubble size collide with nearby controls or clip at the viewport edge.</p>
+<div class='kv'>
+<div><b>Issues</b> onboarding-001, onboarding-003, organize-001</div>
+<div><b>Modules</b> onboarding, organize</div>
+<div><b>Common failing configs</b> 320x640 at elevated fontScale; onboarding landing also fails on wider widths at fontScale 1.5</div>
+<div><b>Probable shared layer</b> COMPONENT RecapSpeechBubble + SCREEN absolute placement</div>
+<div><b>Evidence</b> Landing fixed LandingBubbleKakaoGap; guide step3 left hotspot without clamp; organize Progress pinned CTA without content bottom inset for enlarged bubble.</div>
+</div></article>
+
+<article class='pattern'>
+<h3>xpat-003: Single-line ellipsis truncates required labels at compact width + high fontScale <span class='badge'>MEDIUM</span></h3>
+<p>Required primary labels that use maxLines=1 with TextOverflow.Ellipsis become incomplete on compact widths, reducing readability of category identity.</p>
+<div class='kv'>
+<div><b>Issues</b> collection-001</div>
+<div><b>Modules</b> collection</div>
+<div><b>Common failing configs</b> collection from fontScale 1.3 on 320dp grid cells</div>
+<div><b>Probable shared layer</b> SCREEN/COMPONENT single-line text overflow contracts</div>
+<div><b>Evidence</b> collection-001 fixed 3-column grid cells ellipsize category titles.</div>
+</div></article>
+
+
+</section>
+
+<section>
+  <h2>Passed modules</h2>
+  <ul>
+<li><strong>screenshot</strong> - 45/45 renders inspected, 0 issues.</li>
+<li><strong>home</strong> - 54/54 renders inspected, 0 issues.</li>
+</ul>
+
+
+  <h2>Blocked modules</h2>
+  <p>No blocked modules.</p>
+</section>
+
+<section class="limitations">
+  <h2>Limitations</h2>
+  <ul>
+    <li>Host-side Compose Preview Screenshot Testing only — no emulator or physical device run in this audit.</li>
+    <li>Gesture navigation collisions were not verified.</li>
+    <li>3-button navigation collisions were not verified.</li>
+    <li>WindowInsets / system bars were not verified.</li>
+    <li>Scroll reachability for below-the-fold content is inferred from Compose source (e.g. verticalScroll), not from interactive runtime scrolling.</li>
+    <li>VM / system-inset QA is a separate follow-up and was not part of this run.</li>
+  </ul>
+</section>
+</main>
+<footer>Offline report · relative image paths only · commit b9e2dcf</footer>
+<script>
+(function(){
+  function apply(){
+    var m=document.getElementById('fModule').value;
+    var s=document.getElementById('fSeverity').value;
+    var c=document.getElementById('fCategory').value;
+    var w=document.getElementById('fWidth').value;
+    var f=document.getElementById('fFont').value;
+    var nodes=document.querySelectorAll('#issueList .issue');
+    var vis=0;
+    nodes.forEach(function(n){
+      var ok=true;
+      if(m && n.dataset.module!==m) ok=false;
+      if(s && n.dataset.severity!==s) ok=false;
+      if(c && n.dataset.category!==c) ok=false;
+      if(w){
+        var ws=(n.dataset.widths||'').split(',');
+        if(ws.indexOf(String(w))===-1) ok=false;
+      }
+      if(f){
+        var fs=(n.dataset.fonts||'').split(',');
+        if(fs.indexOf(String(f))===-1) ok=false;
+      }
+      n.classList.toggle('hidden', !ok);
+      if(ok) vis++;
+    });
+    document.getElementById('issueVisibleCount').textContent='('+vis+')';
+  }
+  ['fModule','fSeverity','fCategory','fWidth','fFont'].forEach(function(id){
+    document.getElementById(id).addEventListener('change', apply);
+  });
+})();
+</script>
+</body>
+</html>
