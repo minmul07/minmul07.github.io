@@ -7,6 +7,7 @@ tags: [android, ai]
 description: "Recap을 개발하면서 사용한 스크린샷 QA 자동화"
 toc: true
 mermaid: true
+permalink: /posts/2/
 
 ---
 
@@ -181,13 +182,13 @@ HTML 리포트는 다음 항목들을 필수적으로 포함하도록 했다. �
 <table>
   <tr>
     <td style="vertical-align:top; text-align:center; padding-right:4px;">
-      <img src="/recap-ui-qa-report/assets/onboarding/onboarding-001__320x640-font130.png"
+      <img src="/posts/2/recap-ui-qa-report/assets/onboarding/onboarding-001__320x640-font130.png"
            alt="onboarding-001 가장 심한 실패 320x640 fontScale 1.3"
            style="max-height:500px; height:auto; width:auto; display:block; margin:auto;"/>
       <div><em>가장 심한 실패 · 320x640 · fontScale 1.3</em></div>
     </td>
     <td style="vertical-align:top; text-align:center; padding-left:4px;">
-      <img src="/recap-ui-qa-report/assets/onboarding/onboarding-001__healthy.png"
+      <img src="/posts/2/recap-ui-qa-report/assets/onboarding/onboarding-001__healthy.png"
            alt="onboarding-001 정상 비교"
            style="max-height:500px; height:auto; width:auto; display:block; margin:auto;"/>
       <div><em>정상 상태</em></div>
@@ -195,7 +196,7 @@ HTML 리포트는 다음 항목들을 필수적으로 포함하도록 했다. �
   </tr>
 </table>
 
-[전체 HTML 리포트](/recap-ui-qa-report/)
+[전체 HTML 리포트](recap-ui-qa-report/)
 
 ## 한계점
 
